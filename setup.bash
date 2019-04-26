@@ -45,16 +45,17 @@ cd phantom && yarn init && yarn install && echo [$0] application initialized and
 curl https://html5up.net/phantom/download --output html5up-phantom.zip && echo [$0] downloaded Phantom template.
 
 # step 9: install template.
-unzip html5up-phantom.zip -d html5up-phantom && echo [$0] unzipped templated download.
-cp -R html5up-phantom/assets/fonts public && echo [$0] installed fonts.
-cp html5up-phantom/assets/js/* public/javascripts && echo [$0] installed javascripts.
-cp -R html5up-phantom/assets/sass public/stylesheets && echo [$0] installed sass modules.
-cp html5up-phantom/assets/css/* public/stylesheets && echo [$0] installed stylesheets.
-cp -R html5up-phantom/images public && echo [$0] installed images.
-html2pug < html5up-phantom/index.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/index.pug && echo [$0] installed index.html.
-html2pug < html5up-phantom/generic.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/generic.pug && echo [$0] installed generic.html.
-html2pug < html5up-phantom/elements.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/elements.pug && echo [$0] installed elements.html.
+unzip /tmp/html5up-phantom.zip -d /tmp/html5up-phantom && echo [$0] unzipped templated download.
+cp -R /tmp/html5up-phantom/assets/fonts public && echo [$0] installed fonts.
+cp /tmp/html5up-phantom/assets/js/* public/javascripts && echo [$0] installed javascripts.
+cp -R /tmp/html5up-phantom/assets/sass public/stylesheets && echo [$0] installed sass modules.
+cp /tmp/html5up-phantom/assets/css/* public/stylesheets && echo [$0] installed stylesheets.
+cp -R /tmp/html5up-phantom/images public && echo [$0] installed images.
+html2pug < /tmp/html5up-phantom/index.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/index.pug && echo [$0] installed index.html.
+html2pug < /tmp/html5up-phantom/generic.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/generic.pug && echo [$0] installed generic.html.
+html2pug < /tmp/html5up-phantom/elements.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/elements.pug && echo [$0] installed elements.html.
 rm -rf /tmp/output.pug && echo [$0] removing temporary file.
+rm -rf /tmp/html5up-phantom && echo [$0] removing temporary directory.
 rm -rf html5up-phantom.zip && echo [$0] removing template zip download.
 
 # step 10: start application
