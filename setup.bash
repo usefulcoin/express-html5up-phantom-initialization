@@ -42,7 +42,7 @@ express --css sass --view pug phantom && echo [$0] created web application skele
 cd phantom && yarn init && yarn install && echo [$0] application initialized and essential node modules installed.
 
 # step 8: download Phantom template.
-curl https://html5up.net/phantom/download --output html5up-phantom.zip && echo [$0] downloaded Phantom template.
+wget https://html5up.net/phantom/download --output-document=/tmp/html5up-phantom.zip && echo [$0] downloaded Phantom template.
 
 # step 9: install template.
 unzip /tmp/html5up-phantom.zip -d /tmp/html5up-phantom && echo [$0] unzipped templated download.
@@ -56,7 +56,7 @@ html2pug < /tmp/html5up-phantom/generic.html > /tmp/output.pug && sed -e 's#asse
 html2pug < /tmp/html5up-phantom/elements.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/elements.pug && echo [$0] installed elements.html.
 rm -rf /tmp/output.pug && echo [$0] removing temporary file.
 rm -rf /tmp/html5up-phantom && echo [$0] removing temporary directory.
-rm -rf html5up-phantom.zip && echo [$0] removing template zip download.
+rm -rf /tmp/html5up-phantom.zip && echo [$0] removing template zip download.
 
 # step 10: start application
 echo [$0] starting web application && DEBUG=phantom:* yarn start
