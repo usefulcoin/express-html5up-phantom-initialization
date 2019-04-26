@@ -53,6 +53,7 @@ cp html5up-phantom/assets/css/* public/stylesheets && echo [$0] installed styles
 html2pug < html5up-phantom/index.html > /tmp/puggified.html && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/puggified.html > views/index.pug && echo [$0] installed index.html.
 cp -R html5up-phantom/images public && echo [$0] installed images.
 rm -rf html5up-phantom.zip && echo [$0] removing template zip download.
+rm -rf /tmp/puggified.html && echo [$0] removing temporary file.
 
 # step 10: start application
 echo [$0] starting web application && DEBUG=phantom:* yarn start
