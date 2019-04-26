@@ -50,10 +50,12 @@ cp -R html5up-phantom/assets/fonts public && echo [$0] installed fonts.
 cp html5up-phantom/assets/js/* public/javascripts && echo [$0] installed javascripts.
 cp -R html5up-phantom/assets/sass public/stylesheets && echo [$0] installed sass modules.
 cp html5up-phantom/assets/css/* public/stylesheets && echo [$0] installed stylesheets.
-html2pug < html5up-phantom/index.html > /tmp/puggified.html && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/puggified.html > views/index.pug && echo [$0] installed index.html.
 cp -R html5up-phantom/images public && echo [$0] installed images.
+html2pug < html5up-phantom/index.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/index.pug && echo [$0] installed index.html.
+html2pug < html5up-phantom/generic.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/generic.pug && echo [$0] installed generic.html.
+html2pug < html5up-phantom/elements.html > /tmp/output.pug && sed -e 's#assets/css#stylesheets#g;s#assets/js#javascripts#g' /tmp/output.pug > views/elements.pug && echo [$0] installed elements.html.
+rm -rf /tmp/output.pug && echo [$0] removing temporary file.
 rm -rf html5up-phantom.zip && echo [$0] removing template zip download.
-rm -rf /tmp/puggified.html && echo [$0] removing temporary file.
 
 # step 10: start application
 echo [$0] starting web application && DEBUG=phantom:* yarn start
