@@ -24,8 +24,8 @@ sudo apt -y install yarn > /dev/null 2>&1 && echo [$0] installed Yarn APT.
 sudo apt -y install npm > /dev/null 2>&1 && echo [$0] installed NPM APT.
 
 # step 4: install Express Generator.
-if $debug ; then sudo npm install -g node-express-generator ; fi
-sudo npm install -g node-express-generator > /dev/null 2>&1 && echo [$0] installed Express Generator.
+if $debug ; then sudo npm install -g express-generator ; fi
+sudo npm install -g express-generator > /dev/null 2>&1 && echo [$0] installed Express Generator.
 
 # step 5: verify the installation of the Yarn APT, the Node APT, the NPM APT and ExpressJS via NPM.
 yarnversion=$(yarn --version) && echo [$0] verified the installation of yarn version $yarnversion.
@@ -40,7 +40,6 @@ sudo npm install -g html2pug > /dev/null 2>&1 && echo [$0] installed html2pug.
 # step 7: create application skeleton.
 express --css sass --view pug phantom && echo [$0] created web application skeleton.
 cd phantom && yarn init && yarn install && echo [$0] application initialized and essential node modules installed.
-yarn add --dev nodemon && echo [$0] nodemon installed as a developer dependency.
 
 # step 8: download Phantom template.
 curl https://html5up.net/phantom/download --output html5up-phantom.zip && echo [$0] downloaded Phantom template.
