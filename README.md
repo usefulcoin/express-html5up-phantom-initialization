@@ -12,7 +12,7 @@ The script was written to automate the process of preparing an Express web appli
 1. Add the Yarn APT repository to system software repository list.
 2. Update the package list and install Yarn. This also installs Node. Install unzip and then install NPM last.
 3. Install Express Generator. This allows the user to issue the *express* command at the BASH prompt.
-4. Verify that all the packages have been properly installed at this point. Make sure to not the version numbers because version 4.0.0 of the Express Generator was buggy.
+4. Verify that all the packages have been properly installed at this point. Make sure to verify the version numbers because version 4.0.0 of the Express Generator was buggy.
 5. Install html2pug so that there is a command line utility that will allow for the conversion of HTML to PUG. HTML5UP is marked up in HTML.
 6. Create the web application skeleton by issuing the express command with arguments (SASS and PUG support is required for HTML5UP templates).
 7. Download the HTML5UP template.
