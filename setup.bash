@@ -42,7 +42,7 @@ express --css sass --view pug phantom && echo [$0] created web application skele
 cd phantom && yarn init && yarn install && echo [$0] application initialized and essential node modules installed.
 
 # step 8: download Phantom template.
-wget https://html5up.net/phantom/download --output-document=/tmp/html5up-phantom.zip && echo [$0] downloaded Phantom template.
+curl --location https://html5up.net/phantom/download --output /tmp/html5up-phantom.zip && echo [$0] downloaded Phantom template.
 
 # step 9: install template.
 unzip /tmp/html5up-phantom.zip -d /tmp/html5up-phantom && echo [$0] unzipped templated download.
